@@ -1,0 +1,17 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight"> <!-- ripple при нажатии -->
+
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Тёмный полупрозрачный фон -->
+            <solid android:color="#66000000"/> <!-- #66 = прозрачность ~40%, 000000 = черный -->
+
+            <!-- Закругление только левых углов -->
+            <corners
+                android:topLeftRadius="8dp"
+                android:bottomLeftRadius="8dp"
+                android:topRightRadius="0dp"
+                android:bottomRightRadius="0dp"/>
+        </shape>
+    </item>
+</ripple>

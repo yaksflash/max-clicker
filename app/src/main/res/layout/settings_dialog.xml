@@ -1,0 +1,78 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp"
+    app:strokeColor="#49CCFF"
+    app:strokeWidth="4dp"
+    app:cardBackgroundColor="@color/semi_transparent_black"
+    android:padding="24dp">
+
+    <!-- Вложенный LinearLayout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Настройки"
+            android:layout_marginVertical="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Звуковые эффекты"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_weight="2"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/voiceSettingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Включены"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Кликер-кнопка"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_weight="2"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/clickerSettingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Обычная"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

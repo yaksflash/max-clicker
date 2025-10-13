@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ClickerFragment"
+        android:icon="@drawable/target_svgrepo_com"
+        android:title="Clicker" />
+
+    <item
+        android:id="@+id/UpgradesFragment"
+        android:icon="@drawable/cart_arrow_up"
+        android:title="Upgrades" />
+
+    <item
+        android:id="@+id/ProfileFragment"
+        android:icon="@drawable/person_svgrepo_com"
+        android:title="Profile" />
+    
+</menu>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bluepurple_background"
+    tools:context=".MainActivity">
+
+    <!-- Верхняя панель с уровнем, силой и балансом -->
+    <LinearLayout
+        android:id="@+id/topLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="20dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Уровень -->
+        <LinearLayout
+            android:id="@+id/levelLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/rounded_background_topleft"
+            android:paddingHorizontal="8dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/iconOfLevel"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/rank_up"/>
+
+            <TextView
+                android:id="@+id/textViewOfLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:letterSpacing="-0.05"
+                android:ellipsize="end"
+                android:layout_marginStart="8dp"
+                android:singleLine="true"
+                android:textSize="20sp"
+                android:text="1"/>
+        </LinearLayout>
+
+        <!-- Баланс -->
+        <LinearLayout
+            android:id="@+id/coinsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/rounded_background_center"
+            android:paddingHorizontal="8dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/iconOfCoins"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/max_coin"/>
+
+            <TextView
+                android:id="@+id/textViewOfCoins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="-0.05"
+                android:layout_marginStart="8dp"
+                android:gravity="start"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="20sp"
+                android:text="0"/>
+        </LinearLayout>
+
+        <!-- MAX Gold -->
+        <LinearLayout
+            android:id="@+id/maxGoldLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/rounded_background_topright"
+            android:paddingHorizontal="8dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/iconOfMaxGold"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/max_coin2"/>
+
+            <TextView
+                android:id="@+id/textViewOfMaxGold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="-0.05"
+                android:gravity="start"
+                android:ellipsize="end"
+                android:layout_marginStart="8dp"
+                android:singleLine="true"
+                android:textSize="20sp"
+                android:text="0"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!-- Фрагмент для навигации -->
+    <fragment
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom_navigation"
+        app:layout_constraintTop_toBottomOf="@id/topLinear"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- BottomNavigationView -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        android:background="@drawable/navigation_visual"
+        app:itemBackground="@drawable/nav_active_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "daily1",
+    "day": 1,
+    "name": "MAX-коины x100",
+    "reward": "coin",
+    "value": 100
+  },   {
+  "id": "daily2",
+  "day": 2,
+  "name": "MAX-коины x1000",
+  "reward": "coin",
+  "value": 1000
+},  {
+  "id": "daily3",
+  "day": 3,
+  "name": "MAX-коины x5000",
+  "reward": "coin",
+  "value": 5000
+},  {
+  "id": "daily4",
+  "day": 4,
+  "name": "MAX gold-коины x5",
+  "reward": "gold",
+  "value": 5
+},  {
+  "id": "daily5",
+  "day": 5,
+  "name": "MAX-коины x7000",
+  "reward": "coin",
+  "value": 7000
+},  {
+  "id": "daily6",
+  "day": 6,
+  "name": "MAX-коины x5000",
+  "reward": "coin",
+  "value": 5000
+},  {
+  "id": "daily7",
+  "day": 7,
+  "name": "MAX gold-коины x10",
+  "reward": "gold",
+  "value": 10
+}
+]

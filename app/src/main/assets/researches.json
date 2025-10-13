@@ -1,0 +1,27 @@
+[
+  {
+    "id": "research1",
+    "type": "clickPower",
+    "name": "Сила клика +1",
+    "value": 1,
+    "price": 3
+  },   {
+  "id": "research2",
+  "type": "clickPower",
+  "name": "Сила клика +6",
+  "value": 6,
+  "price": 15
+},   {
+  "id": "research3",
+  "type": "offlineBonus",
+  "name": "Оффлайн множитель +x0.1",
+  "value": 0.1,
+  "price": 2
+},   {
+  "id": "research4",
+  "type": "offlineBonus",
+  "name": "Оффлайн множитель +x0.4",
+  "value": 0.4,
+  "price": 7
+}
+]

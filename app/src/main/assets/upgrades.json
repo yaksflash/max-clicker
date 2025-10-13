@@ -1,0 +1,31 @@
+[
+  {
+    "id": "click_power1",
+    "name": "Сила клика",
+    "description": "Увеличивает силу клика на 1",
+    "cost": 50,
+    "type": "ClickPower",
+    "value": 1
+  }, {
+  "id": "click_power10",
+  "name": "Сила клика",
+  "description": "Увеличивает силу клика на 5",
+  "cost": 2000,
+  "type": "ClickPower",
+  "value": 5
+  }, {
+  "id": "offline_reward5",
+  "name": "Оффлайн заработок",
+  "description": "Повышает заработок на 5 в минуту",
+  "cost": 1000,
+  "type": "OfflineReward",
+  "value": 5
+}, {
+  "id": "offline_reward10",
+  "name": "Оффлайн заработок",
+  "description": "Повышает заработок на 10 в минуту",
+  "cost": 3000,
+  "type": "OfflineReward",
+  "value": 10
+}
+]

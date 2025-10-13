@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp"
+    app:strokeColor="#49CCFF"
+    app:strokeWidth="4dp"
+    app:cardBackgroundColor="@color/semi_transparent_black"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Вы получаете награду за оффлайн!"/>
+
+        <TextView
+            android:id="@+id/rewardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:text="br br patapim"/>
+
+        <TextView
+            android:id="@+id/offlineTimeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time offline: тралалейло тралала"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:textColor="#D0D0D0"
+            />
+
+
+        <Button
+            android:id="@+id/closeRewardBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:text="Спасибо, MAX!"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
