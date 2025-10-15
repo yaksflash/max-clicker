@@ -20,6 +20,12 @@ import androidx.core.view.isVisible
 
 class RegistrationWindow : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val config = resources.configuration
+        if (config.fontScale != 1f) {
+            config.fontScale = 1f
+            applyOverrideConfiguration(config)
+        }
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_registration_window)
@@ -108,10 +114,11 @@ class RegistrationWindow : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context) {
         val config = newBase.resources.configuration
-        config.fontScale = 1.0f  // фиксируем масштаб шрифта
+        if (config.fontScale != 1f) config.fontScale = 1f
         val context = newBase.createConfigurationContext(config)
         super.attachBaseContext(context)
     }
+
 
     fun getAccountList(accounts : String) : List<String> {
         val list = accounts.split("|")

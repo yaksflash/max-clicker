@@ -31,6 +31,12 @@ import com.example.maybeclicker.utils.updateUI
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val config = resources.configuration
+        if (config.fontScale != 1f) {
+            config.fontScale = 1f
+            applyOverrideConfiguration(config)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -115,9 +121,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context) {
         val config = newBase.resources.configuration
-        config.fontScale = 1.0f // фиксируем масштаб шрифта
+        if (config.fontScale != 1f) config.fontScale = 1f
         val context = newBase.createConfigurationContext(config)
         super.attachBaseContext(context)
     }
+
+
 }
 

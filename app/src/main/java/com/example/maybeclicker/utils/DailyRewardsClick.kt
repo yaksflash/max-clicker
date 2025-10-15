@@ -52,19 +52,26 @@ fun Fragment.setupDailyRewardClick(dailyRewardLayout: LinearLayout?) {
 
         adapter = DailyRewardAdapter(requireContext(), dailyRewards, object : DailyRewardAdapter.OnDailyRewardClickListener {
             override fun OnDailyRewardClick(claimReward: DailyReward) {
-                val lastRewardTime = sharedPref.getLong("LAST_DAILY_REWARD_TIME", 15L)
+                var lastRewardTime = sharedPref.getLong("LAST_DAILY_REWARD_TIME", 0L)
                 val dailyRewardStreak = sharedPref.getInt("DAILY_REWARD_STREAK", 0)
 
-                if (lastRewardTime == 15L) {
+                val now = System.currentTimeMillis()
+                if (lastRewardTime <= 0 || lastRewardTime > now) {
+                    // если значение явно некорректное — сбрасываем
+                    lastRewardTime = 0L
+                    sharedPref.edit { remove("LAST_DAILY_REWARD_TIME") }
+                }
+
+                if (lastRewardTime == 0L) {
                     sharedPref.edit {
-                        putLong("LAST_DAILY_REWARD_TIME", System.currentTimeMillis())
+                        putLong("LAST_DAILY_REWARD_TIME", now)
                         Toast.makeText(context, "Возвращайтесь через 24 часа :)", Toast.LENGTH_LONG).show()
                     }
                     return
                 }
                 val oneDayMillis = 24 * 60 * 60 * 1000L // миллисекунд в сутках
                 //val oneDayMillis = 10 * 1000L // миллисекунд в сутках
-                val elapsed = System.currentTimeMillis() - lastRewardTime
+                val elapsed = now - lastRewardTime
 
                 // Проверка последовательности (чтобы нельзя было пропускать дни)
                 if (claimReward.day > dailyRewardStreak + 1) {
@@ -76,7 +83,7 @@ fun Fragment.setupDailyRewardClick(dailyRewardLayout: LinearLayout?) {
                     // Прошло более 2 дней — сброс
                     elapsed > oneDayMillis * 2 -> {
                         sharedPref.edit {
-                            putLong("LAST_DAILY_REWARD_TIME", System.currentTimeMillis())
+                            putLong("LAST_DAILY_REWARD_TIME", now)
                             putInt("DAILY_REWARD_STREAK", 0)
                         }
                         dialog.dismiss()
@@ -87,7 +94,7 @@ fun Fragment.setupDailyRewardClick(dailyRewardLayout: LinearLayout?) {
                     elapsed >= oneDayMillis -> {
                         sharedPref.edit {
                             putInt("DAILY_REWARD_STREAK", dailyRewardStreak + 1)
-                            putLong("LAST_DAILY_REWARD_TIME", System.currentTimeMillis())
+                            putLong("LAST_DAILY_REWARD_TIME", now)
                         }
 
                         val userCoins = sharedPref.getFloat("COIN_COUNT", 0f)
@@ -121,6 +128,7 @@ fun Fragment.setupDailyRewardClick(dailyRewardLayout: LinearLayout?) {
                         val minutes = (remaining / (1000 * 60)) % 60
                         val seconds = (remaining / 1000) % 60
                         val formatted = String.format("%02d:%02d:%02d", hours, minutes, seconds)
+                        //Toast.makeText(context, lastRewardTime.toString(), Toast.LENGTH_LONG).show()
                         Toast.makeText(context, "Подождите: $formatted!", Toast.LENGTH_LONG).show()
                     }
                 }

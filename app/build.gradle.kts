@@ -11,8 +11,8 @@ android {
         applicationId = "com.example.maybeclicker"
         minSdk = 24
         targetSdk = 36
-        versionCode = 24
-        versionName = "2.13"
+        versionCode = 25
+        versionName = "2.14"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

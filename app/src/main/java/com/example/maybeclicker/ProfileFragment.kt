@@ -99,6 +99,7 @@ class ProfileFragment : Fragment() {
 
             val success = requireActivity().deleteSharedPreferences(account) &&
                     requireActivity().deleteSharedPreferences("${account}upgrades")
+                            && requireActivity().deleteSharedPreferences("${account}goldupgrades")
 
             if (success) {
                 Toast.makeText(context, "$account удалён", Toast.LENGTH_SHORT).show()
